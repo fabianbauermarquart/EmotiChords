@@ -83,12 +83,7 @@ def get_text_only(x, _):
 def create_model():
     train_ds = build_dataset(eval=False)
     test_ds = build_dataset(eval=True)
-    inspect_ds = build_dataset(eval=False, inspect=True)
     text_only_train_ds = train_ds.map(get_text_only)
-
-    example = next(iter(inspect_ds))
-    print("inputs = {}".format(example[0]))
-    print("labels = {}".format(example[1]))
 
     max_length = 600
     max_tokens = 20000
@@ -124,7 +119,7 @@ def create_model():
                                            save_best_only=True)
     ]
 
-    model.fit(int_train_ds, validation_data=int_test_ds, epochs=10, callbacks=callbacks)
+    model.fit(int_train_ds, validation_data=int_test_ds, epochs=40, callbacks=callbacks)
     model = tf.keras.models.load_model("embeddings_bidir_gru_with_masking.keras")
     print(f"Test acc: {model.evaluate(int_test_ds)[1]:.3f}")
 

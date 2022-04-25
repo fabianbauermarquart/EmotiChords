@@ -155,23 +155,3 @@ def play_progression(emotion: str):
 
     for chord in progression:
         play_for(make_chord(notes['A'], get_chord(chord), sawtooth_wave), length)
-
-
-if False:
-    # Play A (440Hz) for 1 second as a sine wave:
-    play_for(sine_wave(440, 4096), length)
-
-    # Play A-440 for 1 second as a square wave:
-    play_for(square_wave(440, 4096), length)
-
-    play_for(sum([sine_wave(440, 4096), sine_wave(880, 4096)]), length)
-
-    play_for(make_chord(440, [[4, 5]], square_wave), length)
-
-    play_for(make_chord(440, [intervals['major third'], intervals['fifth']]), length)
-
-    play_for(make_chord(notes['A'], get_chord('madd9'), square_wave), length)
-    play_for(make_chord(notes['A'], get_chord('dim'), square_wave), length)
-
-# play_for(load_signal_wav('violin', stereo=True), length)
-# play_progression('cheerful')
