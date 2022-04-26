@@ -17,6 +17,11 @@ Then, a rule-based algorithm retrieves the emotion's respective musical chords a
 
     main.py -t 'This is great news!'
 
+Note that upon first usage, *EmotiChords* needs to train the internal classifier,
+therefore taking some time before being ready.
+For subsequent runs, the process only takes one or two minutes.
+
+
 ### Example Chords
 
 - annoyance: M9, M7b5
