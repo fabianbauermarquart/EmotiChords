@@ -3,6 +3,9 @@
 *EmotiChords* uses machine learning to analyze the emotion of a written piece of text and plays back that emotion as a
 musical chord.
 
+![](diagrams/emotichords.png)
+
+
 ## Description
 
 An bidirectional LSTM model trained on Google's
@@ -24,13 +27,7 @@ For subsequent runs, the process only takes one or two minutes.
 
 ### Example Chords
 
-- annoyance: M9, M7b5
-- fear: M7b5, m
-- joy: M, M9
-- love: Maj7, add9
-- nervousness: sus2, dim
-- optimism: Maj7, M6
-- sadness: add9, madd9
+![](diagrams/chords.png)
 
 ## Requirements
 
