@@ -9,7 +9,7 @@ from classification import create_model, build_dataset, get_text_only, LABELS
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='EmotiChords')
-    parser.add_argument('-t', '--text', help='Input text', required=False, default='So sad')
+    parser.add_argument('-t', '--text', help='Input text', required=True)
 
     args = parser.parse_args()
 
@@ -34,7 +34,5 @@ if __name__ == '__main__':
 
     label_index = np.argmax(model.call(text_vectorization((args.text,))))
     label = LABELS[label_index]
-
-    print(f'emotion: {label}')
 
     play_progression(label)
