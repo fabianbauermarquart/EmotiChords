@@ -110,7 +110,7 @@ def create_model():
     outputs = layers.Dense(len(LABELS), activation="sigmoid")(x)
     model = tf.keras.Model(inputs, outputs)
     model.compile(optimizer="rmsprop",
-                  loss="binary_crossentropy",
+                  loss="categorical_crossentropy",
                   metrics=["accuracy"])
     model.summary()
 
